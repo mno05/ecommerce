@@ -81,7 +81,8 @@ class _LoginState extends State<Login> {
                       ),
                       InputText(
                         icon: Icons.lock_outline_rounded,
-                        hint: 'Votre mot de passe',
+                        hint: 'Mot de passe',
+                        motDePasse: true,
                       ),
                       SizedBox(height: 15),
                       InkWell(
