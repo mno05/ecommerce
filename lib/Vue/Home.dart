@@ -22,8 +22,8 @@ class _HomeState extends State<Home> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            ShopCard(),
-            ShopCard(),
+            shopCard(),
+            shopCard(),
           ],
         ),
       )),
@@ -34,7 +34,7 @@ class _HomeState extends State<Home> {
   }
 }
 
-Widget ShopCard() {
+Widget shopCard() {
   return Container(
     height: 230,
     width: 180,

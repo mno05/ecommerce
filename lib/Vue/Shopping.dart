@@ -17,7 +17,7 @@ class _ShoppingState extends State<Shopping> {
       backgroundColor: ColorData.bcgrndcolor,
       appBar: AppBarC(),
       body: Center(
-        child: ShopCard(),
+        child: shopCard(),
       ),
       bottomNavigationBar: NavigateBar(
         index: 2,
@@ -26,7 +26,7 @@ class _ShoppingState extends State<Shopping> {
   }
 }
 
-Widget ShopCard() {
+Widget shopCard() {
   return Container(
     margin: EdgeInsets.all(20),
     height: 150,

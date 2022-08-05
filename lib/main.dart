@@ -7,15 +7,16 @@ import 'package:ecommerce/Vue/login.dart';
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
-  runApp(app());
+  runApp(App());
 }
 
-class app extends StatelessWidget {
-  const app({Key key}) : super(key: key);
+class App extends StatelessWidget {
+  const App({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Ecommerce',
       debugShowCheckedModeBanner: false,
       routes: {
         "/login": (context) => Login(),
@@ -25,7 +26,7 @@ class app extends StatelessWidget {
         "/profile": (context) => Profile(),
         "/shopping": (context) => Shopping(),
       },
-      initialRoute: "/shopping",
+      initialRoute: "/home",
     );
   }
 }

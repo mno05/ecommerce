@@ -1,3 +1,4 @@
+import 'package:ecommerce/Vue/Data/Colors.dart';
 import 'package:ecommerce/Vue/widgets/AppBar.dart';
 import 'package:ecommerce/Vue/widgets/NavigateBar.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,20 @@ class _ProfileState extends State<Profile> {
       appBar: AppBarC(),
       bottomNavigationBar: NavigateBar(
         index: 1,
+      ),
+      backgroundColor: ColorData.bcgrndcolor,
+      body: Container(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              CircleAvatar(
+                radius: 80,
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
