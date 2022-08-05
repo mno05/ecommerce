@@ -1,6 +1,6 @@
+import 'package:ecommerce/Vue/Data/Colors.dart';
 import 'package:ecommerce/Vue/widgets/InputText.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class Login extends StatefulWidget {
   const Login({Key key}) : super(key: key);
@@ -102,7 +102,7 @@ class _LoginState extends State<Login> {
                               )
                             ],
                             borderRadius: BorderRadius.circular(50),
-                            color: Colors.yellow.shade600,
+                            color: ColorData.primaryColor,
                           ),
                           child: Center(
                             child: Text(
