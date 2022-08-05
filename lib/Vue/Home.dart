@@ -1,3 +1,5 @@
+import 'package:ecommerce/Vue/Data/Colors.dart';
+import 'package:ecommerce/Vue/widgets/AppBar.dart';
 import 'package:ecommerce/Vue/widgets/NavigateBar.dart';
 import 'package:flutter/material.dart';
 
@@ -12,20 +14,8 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white.withOpacity(.94),
-      appBar: AppBar(
-        title: Text(
-          "SHOPPERS",
-          style: TextStyle(
-            fontSize: 28,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-            fontFamily: 'Schyler',
-          ),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.white,
-      ),
+      backgroundColor: ColorData.bcgrndcolor,
+      appBar: AppBarC(),
       body: Center(
           child: Padding(
         padding: const EdgeInsets.all(15.0),
@@ -37,7 +27,9 @@ class _HomeState extends State<Home> {
           ],
         ),
       )),
-      bottomNavigationBar: NavigateBar(),
+      bottomNavigationBar: NavigateBar(
+        index: 0,
+      ),
     );
   }
 }
@@ -49,7 +41,7 @@ Widget ShopCard() {
     decoration: BoxDecoration(
       boxShadow: [
         BoxShadow(
-          color: Colors.black38,
+          color: ColorData.shadowColor,
           offset: Offset(3, 3),
           blurRadius: 8,
         )

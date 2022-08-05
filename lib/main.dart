@@ -1,4 +1,7 @@
+import 'package:ecommerce/Vue/Details.dart';
 import 'package:ecommerce/Vue/Home.dart';
+import 'package:ecommerce/Vue/Profile.dart';
+import 'package:ecommerce/Vue/Shopping.dart';
 import 'package:ecommerce/Vue/inscription.dart';
 import 'package:ecommerce/Vue/login.dart';
 import 'package:flutter/material.dart';
@@ -18,8 +21,11 @@ class app extends StatelessWidget {
         "/login": (context) => Login(),
         "/inscription": (context) => Inscription(),
         "/home": (context) => Home(),
+        "/details": (context) => Details(),
+        "/profile": (context) => Profile(),
+        "/shopping": (context) => Shopping(),
       },
-      initialRoute: "/home",
+      initialRoute: "/shopping",
     );
   }
 }

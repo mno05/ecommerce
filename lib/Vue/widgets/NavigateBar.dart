@@ -1,21 +1,29 @@
 import 'package:ecommerce/Vue/Data/Colors.dart';
 import 'package:flutter/material.dart';
 
-class NavigateBar extends StatefulWidget {
-  const NavigateBar({Key key}) : super(key: key);
-
-  @override
-  State<NavigateBar> createState() => _NavigateBarState();
-}
-
-class _NavigateBarState extends State<NavigateBar> {
+class NavigateBar extends StatelessWidget {
+  const NavigateBar({Key key, this.index = 0}) : super(key: key);
+  final int index;
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      onTap: (value) {
+        switch (value) {
+          case 0:
+            Navigator.pushReplacementNamed(context, "/home");
+            break;
+          case 1:
+            Navigator.pushReplacementNamed(context, "/profile");
+            break;
+          case 2:
+            Navigator.pushReplacementNamed(context, "/shopping");
+            break;
+        }
+      },
+      currentIndex: index,
       showSelectedLabels: false,
       showUnselectedLabels: false,
       selectedItemColor: ColorData.primaryColor,
-      
       backgroundColor: Colors.white,
       items: [
         BottomNavigationBarItem(
