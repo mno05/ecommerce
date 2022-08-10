@@ -1,4 +1,5 @@
 import 'package:ecommerce/Vue/Data/Colors.dart';
+import 'package:ecommerce/Vue/widgets/ButtonApp.dart';
 import 'package:ecommerce/Vue/widgets/InputText.dart';
 import 'package:flutter/material.dart';
 
@@ -85,33 +86,9 @@ class _LoginState extends State<Login> {
                         motDePasse: true,
                       ),
                       SizedBox(height: 15),
-                      InkWell(
-                        onTap: () {},
-                        child: Container(
-                          height: 55,
-                          width: 370,
-                          margin: EdgeInsets.only(
-                            bottom: 30,
-                          ),
-                          decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black38,
-                                blurRadius: 8,
-                                offset: Offset(0, 2),
-                              )
-                            ],
-                            borderRadius: BorderRadius.circular(50),
-                            color: ColorData.primaryColor,
-                          ),
-                          child: Center(
-                            child: Text(
-                              'Connexion',
-                              style: TextStyle(
-                                  fontSize: 18, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
+                      ButtonApp(
+                        text: 'Connexion',
+                        retour: () {},
                       ),
                     ],
                   ),

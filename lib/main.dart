@@ -4,9 +4,12 @@ import 'package:ecommerce/Vue/Profile.dart';
 import 'package:ecommerce/Vue/Shopping.dart';
 import 'package:ecommerce/Vue/inscription.dart';
 import 'package:ecommerce/Vue/login.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main(List<String> args) {
+Future<void> main(List<String> args) async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(App());
 }
 

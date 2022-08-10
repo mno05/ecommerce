@@ -1,11 +1,12 @@
 import 'package:ecommerce/Vue/Data/Colors.dart';
 import 'package:ecommerce/Vue/widgets/AppBar.dart';
+import 'package:ecommerce/Vue/widgets/ButtonApp.dart';
 import 'package:ecommerce/Vue/widgets/NavigateBar.dart';
 import 'package:flutter/material.dart';
 
 class Shopping extends StatefulWidget {
   const Shopping({Key key}) : super(key: key);
-
+  
   @override
   State<Shopping> createState() => _ShoppingState();
 }
@@ -17,7 +18,47 @@ class _ShoppingState extends State<Shopping> {
       backgroundColor: ColorData.bcgrndcolor,
       appBar: AppBarC(),
       body: Center(
-        child: shopCard(),
+        child: Column(
+          children: [
+            Expanded(
+              child: Placeholder(),
+              flex: 6,
+            ),
+            Padding(
+              padding: EdgeInsets.all(15),
+              child: Divider(),
+            ),
+            Expanded(
+              flex: 2,
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(14.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Total : ",
+                          style: TextStyle(
+                              fontSize: 17, fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          "300\$",
+                          style: TextStyle(
+                              fontSize: 17, fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ),
+                  ButtonApp(
+                    text: "Payer",
+                    marginB: 10.0,
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
       bottomNavigationBar: NavigateBar(
         index: 2,
@@ -29,7 +70,7 @@ class _ShoppingState extends State<Shopping> {
 Widget shopCard() {
   return Container(
     margin: EdgeInsets.all(20),
-    height: 150,
+    height: 100,
     decoration: BoxDecoration(
         color: ColorData.bcgrndcolor,
         borderRadius: BorderRadius.all(Radius.circular(30)),

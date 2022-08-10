@@ -1,5 +1,4 @@
 import 'package:ecommerce/Vue/widgets/InputText.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Inscription extends StatefulWidget {
