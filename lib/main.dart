@@ -12,10 +12,8 @@ Future<void> main(List<String> args) async {
   await Firebase.initializeApp();
   runApp(App());
 }
-
 class App extends StatelessWidget {
   const App({Key key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -29,7 +27,7 @@ class App extends StatelessWidget {
         "/profile": (context) => Profile(),
         "/shopping": (context) => Shopping(),
       },
-      initialRoute: "/home",
+      initialRoute: "/inscription",
     );
   }
 }

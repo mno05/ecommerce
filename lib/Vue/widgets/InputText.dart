@@ -6,11 +6,14 @@ class InputText extends StatelessWidget {
       this.icon,
       this.hint,
       this.motDePasse = false,
+      this.controller,
       this.icoExit = true})
       : super(key: key);
   final IconData icon;
   final String hint;
   final bool motDePasse, icoExit;
+  final TextEditingController controller;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,6 +24,7 @@ class InputText extends StatelessWidget {
         borderRadius: BorderRadius.circular(50),
       ),
       child: TextField(
+        controller: controller,
         decoration: InputDecoration(
           border: InputBorder.none,
           icon: icoExit

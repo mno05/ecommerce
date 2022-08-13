@@ -1,6 +1,7 @@
+import 'package:ecommerce/Vue/widgets/ButtonApp.dart';
 import 'package:ecommerce/Vue/widgets/InputText.dart';
 import 'package:flutter/material.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
 class Inscription extends StatefulWidget {
   const Inscription({Key key}) : super(key: key);
 
@@ -9,6 +10,9 @@ class Inscription extends StatefulWidget {
 }
 
 class _InscriptionState extends State<Inscription> {
+  FirebaseAuth auth = FirebaseAuth.instance;
+  TextEditingController email = TextEditingController();
+  TextEditingController passeword= TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,6 +84,7 @@ class _InscriptionState extends State<Inscription> {
                       InputText(
                         hint: 'Nom',
                         icoExit: false,
+                        
                       ),
                       Padding(
                         padding: const EdgeInsets.only(
@@ -95,6 +100,7 @@ class _InscriptionState extends State<Inscription> {
                       InputText(
                         hint: 'Adresse email',
                         icoExit: false,
+                        controller: email,
                       ),
                       Padding(
                         padding: const EdgeInsets.only(
@@ -111,6 +117,7 @@ class _InscriptionState extends State<Inscription> {
                         icoExit: false,
                         hint: 'Votre mot de passe',
                         motDePasse: true,
+                        controller: passeword,
                       ),
                       Padding(
                         padding: const EdgeInsets.only(
@@ -129,34 +136,20 @@ class _InscriptionState extends State<Inscription> {
                         motDePasse: true,
                       ),
                       SizedBox(height: 15),
-                      InkWell(
-                        onTap: () {},
-                        child: Container(
-                          height: 55,
-                          width: 370,
-                          margin: EdgeInsets.only(
-                            bottom: 10,
-                          ),
-                          decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black38,
-                                blurRadius: 8,
-                                offset: Offset(0, 2),
-                              )
-                            ],
-                            borderRadius: BorderRadius.circular(50),
-                            color: Colors.yellow.shade600,
-                          ),
-                          child: Center(
-                            child: Text(
-                              'Inscription',
-                              style: TextStyle(
-                                  fontSize: 18, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
+                      ButtonApp(
+                        text: "Inscription",
+                        retour: (){
+                            try{
+                              auth.createUserWithEmailAndPassword(email: email.text, password: passeword.text).then((value) {
+                                  print(value);
+                              });
+                            }catch(e){
+                              print(e);
+
+                            }
+                        },
+                      )
+                      ,
                     ],
                   ),
                 ),
